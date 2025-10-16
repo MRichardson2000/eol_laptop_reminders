@@ -4,7 +4,7 @@ This script automates the process of identifying laptops nearing their end-of-li
 -- THIS IS ON EBSFS005 (PRTG Server) --
 
 📦 Features
-- Scans a CSV file containing laptop inventory and EOL dates.
+- Scans a XLSX file containing laptop inventory and EOL dates.
 - Identifies laptops due for refresh within the next 90 days.
 - Prevents duplicate notifications using a log file.
 - Sends a summary email via Outlook to the helpdesk.
