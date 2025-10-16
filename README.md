@@ -1,6 +1,8 @@
 💻 EOL Laptop Reminder Tool
 This script automates the process of identifying laptops nearing their end-of-life (EOL) and sends reminder emails to the helpdesk team. It helps ensure timely replacements and supports business continuity planning.
 
+-- THIS IS ON EBSFS005 (PRTG Server) --
+
 📦 Features
 - Scans a CSV file containing laptop inventory and EOL dates.
 - Identifies laptops due for refresh within the next 90 days.
