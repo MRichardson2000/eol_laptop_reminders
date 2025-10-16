@@ -38,6 +38,7 @@ LOG_FILE = "K:/IT/Restricted/Ecology Network/devops_automation_mr/eol_laptop_rem
 🚀 Usage
 Set up a batch file with the below, put your user path in and then specify on your c drive where you cloned the repo. This is just where most of my stuff went:
 C:\Users\YOURUSERPATHHERE\AppData\Local\Programs\Python\Python313\python.exe C:\Utilities\Python\eol_laptop_refresh_reminders\main.py
+Then set up a schedule task to run once a week on your chosen day and time that targets this batch file and runs it. 
 
 
 This will:
