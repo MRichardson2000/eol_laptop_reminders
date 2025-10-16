@@ -15,8 +15,7 @@ This script automates the process of identifying laptops nearing their end-of-li
 - openpyxl
 - pywin32 (for Outlook integration)
 Install dependencies:
-uv add pandas openpyxl pywin32 
-<!-- run each one of the above individually -->
+run uv sync to get dependencies from the toml file
 
 
 
@@ -24,7 +23,7 @@ uv add pandas openpyxl pywin32
 project/
 │
 ├── main.py                # Main script
-├── config.py              # Contains CSV_FILE and LOG_FILE paths
+├── config.py              # Contains XLSX_FILE and LOG_FILE paths
 ├── notified_devices.log   # Tracks already notified laptops
 └── README.md              # Documentation
 
@@ -32,7 +31,7 @@ project/
 
 ⚙️ Configuration
 Edit config.py to set your file paths if you need to change them but they're constants so should only need changing for testing:
-CSV_FILE = "K:/IT/Restricted/Ecology Network/devops_automation_mr/eol_laptop_reminders/eol_laptops.xlsx"
+XLSX_FILE = "K:/IT/Restricted/Ecology Network/devops_automation_mr/eol_laptop_reminders/eol_laptops.xlsx"
 LOG_FILE = "K:/IT/Restricted/Ecology Network/devops_automation_mr/eol_laptop_reminders/notified_devices.txt"
 
 
@@ -58,7 +57,7 @@ You can change this to any valid email address or distribution list.
 
 🧪 Testing
 To test with alternate files you just pass in your file paths. It uses the constants if nothings passed in:
-eol_laptops(csv_path="test_inventory.xlsx", log_path="test_log.log")
+eol_laptops(xlsx_path="test_inventory.xlsx", log_path="test_log.log")
 
 
 
