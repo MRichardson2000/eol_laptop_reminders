@@ -2,14 +2,14 @@ import win32com.client
 import pandas as pd
 from datetime import datetime as dt, timedelta as td
 import os
-from config import CSV_FILE, LOG_FILE
+from config import XLSX_FILE, LOG_FILE
 
 
-def eol_laptops(csv_path: str = CSV_FILE, log_path: str = LOG_FILE) -> None:
+def eol_laptops(xlsx_path: str = XLSX_FILE, log_path: str = LOG_FILE) -> None:
     """
     This function has two parameters passed in but they use constants. You don't need to pass anything in when you call it unless you want to change
     which path is being used, maybe for testing for example. The log file is used to record which laptops have already been picked up and emailed through
-    to prevent duplicates. We use pandas to read the csv file (we skip the first row as they're headers) and then we set the threshhold day which is 90 days.
+    to prevent duplicates. We use pandas to read the xlsx file (we skip the first row as they're headers) and then we set the threshhold day which is 90 days.
     This gives us enough time to organise a replacement laptop for them. We check if the log path exists and if it does we open it as read and then we
     establish a variable called notified devices that's equal to each line in the file. Each line is a computer name. If it doesn't exist we establish an empty
     set. We then set up and empty list for the reminders and the newly notified devices. Then we iterate through the excel document using pandas. We're targetting the eol
@@ -18,7 +18,7 @@ def eol_laptops(csv_path: str = CSV_FILE, log_path: str = LOG_FILE) -> None:
     notified the computer names to ensure we don't get duplicates to the helpdesk. Otherwise it returns None but I've added a print statement just saying
     no laptops are due for a refresh. When this runs, this function is called which then calls the send reminder function.
     """
-    df = pd.read_excel(csv_path, engine="openpyxl")
+    df = pd.read_excel(xlsx_path, engine="openpyxl")
     today = dt.today()
     reminder_threshold = today + td(days=90)
     if os.path.exists(log_path):
