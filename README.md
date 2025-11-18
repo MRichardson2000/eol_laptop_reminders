@@ -31,8 +31,8 @@ project/
 
 ⚙️ Configuration
 Edit config.py to set your file paths if you need to change them but they're constants so should only need changing for testing:
-XLSX_FILE = "K:/IT/Restricted/Ecology Network/devops_automation_mr/eol_laptop_reminders/eol_laptops.xlsx"
-LOG_FILE = "K:/IT/Restricted/Ecology Network/devops_automation_mr/eol_laptop_reminders/notified_devices.txt"
+XLSX_FILE = ""
+LOG_FILE = ""
 
 
 
@@ -50,7 +50,7 @@ This will:
 
 ✉️ Email Setup
 The script uses win32com.client to send emails via Outlook. The recipient is currently set to:
-mail.To = "helpdesk@ecology.co.uk"
+mail.To = ""
 
 
 You can change this to any valid email address or distribution list.
