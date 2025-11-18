@@ -60,7 +60,7 @@ def send_reminder(reminder_list: list) -> None:
     outlook = win32com.client.Dispatch("Outlook.Application")
     mail = outlook.CreateItem(0)
     mail.Subject = "EOL Laptop Reminders"
-    mail.To = "helpdesk@ecology.co.uk"
+    mail.To = "EmailAddressHere"
     mail.Body = (
         "The following Laptops are due to be replaced within the next 90 days:\n\n"
         + "\n".join(reminder_list)
